@@ -50,5 +50,7 @@ cityField.pack() # Размещение данного объекта ВСЕГД
 btn = Button(frame_top, text='Посмотреть народу про погоду', command=get_weather)
 btn.pack() # размещаем объект кнопка
 
+# Запускаем цикл для работы
+root.mainloop()
 
 
