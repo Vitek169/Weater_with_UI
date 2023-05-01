@@ -14,9 +14,9 @@ def get_weather():
     # Ссылка с которой получаем информацию в JSON формате
     url = 'http://api.openweathermap.org/data/2.5/weather'
     # Доп.параметры (ключ, ед. измерения, город, указанный пользователем
-    parameters = {'APPID': key, 'q': city, 'units': 'metric'}
+    params = {'APPID': key, 'q': city, 'units': 'metric'}
     # Отправка запроса по определенному URL
-    result = requests.get(url, params=parameters)
+    result = requests.get(url, params=params)
     # Получение ответа в формате JSON
     weather = result.json()
     # Полученную информацию переносим в текстовую надпись для юзера
@@ -28,7 +28,7 @@ root['bg'] = '#fafafa'
 # Название приложения
 root.title('Погода Для Народа')
 # Размеры окна
-root.geometry('300x250')
+root.geometry('400x350')
 # Измненение размеров окна
 root.resizable(width=False, height=False)
 
@@ -49,6 +49,14 @@ cityField.pack() # Размещение данного объекта ВСЕГД
 # Создаем кнопку при нажатии которой будет срабатывать "get_weather"
 btn = Button(frame_top, text='Посмотреть народу про погоду', command=get_weather)
 btn.pack() # размещаем объект кнопка
+
+# Создаем лэйбл
+info_tablo = Label(frame_bottom, text= 'Просмотр погоды народом', bg='#ffb700', font=40)
+info_tablo.pack()
+
+# Запускаем цикл для работы проги
+root.mainloop()
+
 
 
 
